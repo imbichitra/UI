@@ -28,35 +28,35 @@ public class HomeFragment extends Fragment {
 
         context = getContext();
 
-        RecyclerView rvContacts = view.findViewById(R.id.recyclerview);
-        RecyclerView item_RECYCLR = view.findViewById(R.id.order_recyclerview);
+        RecyclerView statusRecyclerView = view.findViewById(R.id.recyclerview);
+        RecyclerView orderRecyclerView = view.findViewById(R.id.order_recyclerview);
 
-        List<String> s = new ArrayList<>();
-        s.add("Pending(129)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Accepted(13)");
-        s.add("Shipped(20)");
-        Adapter adapter = new Adapter(s,getContext());
+        List<String> orderStatus = new ArrayList<>();
+        orderStatus.add("Pending(129)");
+        orderStatus.add("Accepted(13)");
+        orderStatus.add("Shipped(20)");
+        Adapter adapter = new Adapter(orderStatus,context);
 
-        ViewCompat.setNestedScrollingEnabled(rvContacts,false);
-        rvContacts.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
-        rvContacts.setAdapter(adapter);
+        ViewCompat.setNestedScrollingEnabled(statusRecyclerView,false);
+        statusRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+        statusRecyclerView.setAdapter(adapter);
 
         List<OrderItem> orderItems = new ArrayList<>();
         orderItems.add(new OrderItem("Order #1263",true,"Today, 11:11PM",R.drawable.ice,79,"COD"));
         orderItems.add(new OrderItem("Order #7263",true,"Yesterday, 12:10PM",R.drawable.sandwitch,100,"PAID"));
-        orderItems.add(new OrderItem("Order #9263",true,"Yesterday, 9:11PM",R.drawable.samosa,89,"PAID"));
+        orderItems.add(new OrderItem("Order #9263",false,"Yesterday, 9:11PM",R.drawable.samosa,89,"PAID"));
+        orderItems.add(new OrderItem("Order #7263",true,"Yesterday, 12:10PM",R.drawable.sandwitch,100,"PAID"));
+        orderItems.add(new OrderItem("Order #9263",false,"Yesterday, 9:11PM",R.drawable.samosa,89,"PAID"));
+        orderItems.add(new OrderItem("Order #7263",true,"Yesterday, 12:10PM",R.drawable.sandwitch,100,"PAID"));
+        orderItems.add(new OrderItem("Order #9263",false,"Yesterday, 9:11PM",R.drawable.samosa,89,"PAID"));
+        orderItems.add(new OrderItem("Order #7263",true,"Yesterday, 12:10PM",R.drawable.sandwitch,100,"PAID"));
+        orderItems.add(new OrderItem("Order #9263",false,"Yesterday, 9:11PM",R.drawable.samosa,89,"PAID"));
+
         OrderAdapter orderAdapter = new OrderAdapter(orderItems,getContext());
-        ViewCompat.setNestedScrollingEnabled(item_RECYCLR,false);
-        //item_RECYCLR.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
-        item_RECYCLR.setLayoutManager(new LinearLayoutManager(getContext()));
-        item_RECYCLR.setAdapter(orderAdapter);
+        ViewCompat.setNestedScrollingEnabled(orderRecyclerView,false);
+
+        orderRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        orderRecyclerView.setAdapter(orderAdapter);
         return view;
     }
 }

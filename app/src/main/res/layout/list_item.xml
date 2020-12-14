@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/pressed_background"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:layout_gravity="center"
         android:text="Hello"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 </LinearLayout>

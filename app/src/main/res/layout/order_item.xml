@@ -22,7 +22,7 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="16dp"
             android:background="@color/white">
 
             <RelativeLayout
@@ -36,9 +36,14 @@
                     android:text="Order#123"
                     android:textColor="@color/black"/>
                 <TextView
+                    android:background="@drawable/button_background"
                     android:id="@+id/new_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
                     android:text="NEW"
                     android:layout_toRightOf="@+id/order"
                     android:layout_marginStart="10dp"/>

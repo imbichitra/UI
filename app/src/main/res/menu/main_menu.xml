@@ -9,15 +9,27 @@
         android:title="favorites"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/action_orders"
+        android:enabled="true"
+        android:icon="@drawable/shopping_bag"
+        android:title="Orders"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_product"
+        android:enabled="true"
+        android:icon="@drawable/store"
+        android:title="Products"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_schedules"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="schedules"
+        android:icon="@drawable/digital_marketing"
+        android:title="Marketing"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_music"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="text_music"
+        android:icon="@drawable/user"
+        android:title="Account"
         app:showAsAction="ifRoom" />
 </menu>

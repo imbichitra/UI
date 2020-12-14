@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -26,5 +27,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+        BadgeDrawable v = bottomNavigationView.getOrCreateBadge(R.id.action_orders);
+        v.setVisible(true);
+        v.setNumber(10);
+
     }
 }

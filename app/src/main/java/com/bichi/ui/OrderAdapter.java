@@ -45,7 +45,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        TextView orderId,date,price,orderStatus;
+        TextView orderId,date,price,orderStatus,new_item;
         ImageView imageView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,7 +54,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
             price = itemView.findViewById(R.id.price);
             orderStatus = itemView.findViewById(R.id.order_status);
             imageView = itemView.findViewById(R.id.image);
-            //orderId = itemView.findViewById(R.id.order);
+            new_item = itemView.findViewById(R.id.new_item);
         }
 
         void bind(OrderItem orderItem){
@@ -65,6 +65,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
             Glide.with(context)
                     .load(orderItem.getImage())
                     .into(imageView);
+
+            if(orderItem.isNew()){
+                new_item.setVisibility(View.VISIBLE);
+            }else {
+                new_item.setVisibility(View.GONE);
+            }
         }
     }
 }

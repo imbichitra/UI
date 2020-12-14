@@ -16,12 +16,12 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
-    private List<String> s;
+    private List<String> items;
     private Context context;
     int index = 0;
 
-    Adapter(List<String> s, Context context){
-        this.s = s;
+    Adapter(List<String> items, Context context){
+        this.items = items;
         this.context = context;
     }
 
@@ -36,7 +36,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvItem.setText(s.get(position));
+        holder.tvItem.setText(items.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +59,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return s.size();
+        return items.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
 
         LinearLayout linearLayout;
         TextView tvItem;
