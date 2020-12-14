@@ -4,18 +4,19 @@
     android:id="@+id/linear_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/pressed_background"
+    android:layout_marginEnd="16dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtview"
         android:layout_width="match_parent"
-        android:layout_margin="4dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/pressed_background"
         android:paddingStart="32dp"
         android:paddingEnd="32dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center"
         android:text="Hello"
         android:textColor="@color/white"
         android:textSize="18sp" />

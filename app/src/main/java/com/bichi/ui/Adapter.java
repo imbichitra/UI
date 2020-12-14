@@ -47,12 +47,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         });
 
         if(index==position){
-            holder.linearLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.pressed_background));
+            holder.tvItem.setBackground(ContextCompat.getDrawable(context, R.drawable.pressed_background));
             holder.tvItem.setTextColor(Color.WHITE);
         }
         else
         {
-            holder.linearLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.default_background));
+            holder.tvItem.setBackground(ContextCompat.getDrawable(context, R.drawable.default_background));
             holder.tvItem.setTextColor(Color.BLACK);
         }
     }

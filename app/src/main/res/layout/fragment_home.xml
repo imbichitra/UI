@@ -204,7 +204,7 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="5dp"
                 android:background="@color/white"
-                app:cardElevation="6dp"
+                app:cardElevation="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
 
@@ -226,7 +226,7 @@
                         android:layout_marginTop="15dp"
                         android:textSize="20sp"
                         android:text="33"
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -239,7 +239,7 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="5dp"
                 android:background="@color/white"
-                app:cardElevation="6dp"
+                app:cardElevation="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
 
@@ -261,7 +261,7 @@
                         android:layout_marginTop="15dp"
                         android:textSize="20sp"
                         android:text="₹2,918"
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -274,7 +274,7 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="5dp"
                 android:background="@color/white"
-                app:cardElevation="6dp"
+                app:cardElevation="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
 
@@ -296,7 +296,7 @@
                         android:layout_marginTop="15dp"
                         android:textSize="20sp"
                         android:text="301"
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
@@ -309,7 +309,7 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="5dp"
                 android:background="@color/white"
-                app:cardElevation="6dp"
+                app:cardElevation="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1">
 
@@ -331,7 +331,7 @@
                         android:layout_marginTop="15dp"
                         android:textSize="20sp"
                         android:text="19,121"
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
