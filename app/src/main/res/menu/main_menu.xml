@@ -6,7 +6,7 @@
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic__home"
-        android:title="favorites"
+        android:title="Home"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_orders"
