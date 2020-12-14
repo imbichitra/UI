@@ -1,4 +1,4 @@
-package com.bichi.ui;
+package com.bichi.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,15 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bichi.ui.R;
+
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
+public class ItemStatusAdapter extends RecyclerView.Adapter<ItemStatusAdapter.ViewHolder>{
 
     private List<String> items;
     private Context context;
-    int index = 0;
+    int selectedIndex = 0;
 
-    Adapter(List<String> items, Context context){
+    public ItemStatusAdapter(List<String> items, Context context){
         this.items = items;
         this.context = context;
     }
@@ -41,12 +43,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                index = position;
+                selectedIndex = position;
                 notifyDataSetChanged();
             }
         });
 
-        if(index==position){
+        if(selectedIndex==position){
             holder.tvItem.setBackground(ContextCompat.getDrawable(context, R.drawable.pressed_background));
             holder.tvItem.setTextColor(Color.WHITE);
         }

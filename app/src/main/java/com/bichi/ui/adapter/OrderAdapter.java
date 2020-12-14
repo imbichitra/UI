@@ -1,47 +1,47 @@
-package com.bichi.ui;
+package com.bichi.ui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bichi.ui.R;
+import com.bichi.ui.model.OrderItem;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
 
-    private List<OrderItem> items;
+    private List<OrderItem> orderItems;
     private Context context;
-    int index = 0;
-    OrderAdapter(List<OrderItem> items, Context context){
-        this.items = items;
+
+    public OrderAdapter(List<OrderItem> orderItems, Context context){
+        this.orderItems = orderItems;
         this.context = context;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View contactView = inflater.inflate(R.layout.order_item, parent, false);
+        View orderView = inflater.inflate(R.layout.order_item, parent, false);
 
-        return new ViewHolder(contactView);
+        return new ViewHolder(orderView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(items.get(position));
+        holder.bind(orderItems.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return orderItems.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

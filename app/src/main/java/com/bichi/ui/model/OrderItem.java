@@ -1,4 +1,4 @@
-package com.bichi.ui;
+package com.bichi.ui.model;
 
 public class OrderItem {
     private String orderNumber;
