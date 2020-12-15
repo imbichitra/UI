@@ -13,16 +13,17 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bichi.ui.R;
+import com.bichi.ui.model.HorizontalItem;
 
 import java.util.List;
 
 public class ItemStatusAdapter extends RecyclerView.Adapter<ItemStatusAdapter.ViewHolder>{
 
-    private List<String> items;
+    private List<HorizontalItem> items;
     private Context context;
     int selectedIndex = 0;
 
-    public ItemStatusAdapter(List<String> items, Context context){
+    public ItemStatusAdapter(List<HorizontalItem> items, Context context){
         this.items = items;
         this.context = context;
     }
@@ -38,7 +39,7 @@ public class ItemStatusAdapter extends RecyclerView.Adapter<ItemStatusAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvItem.setText(items.get(position));
+        holder.tvItem.setText(items.get(position).getItem());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

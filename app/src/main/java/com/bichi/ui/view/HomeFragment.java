@@ -14,7 +14,10 @@ import android.view.ViewGroup;
 
 import com.bichi.ui.R;
 import com.bichi.ui.adapter.ItemStatusAdapter;
+import com.bichi.ui.adapter.MainAdapter;
 import com.bichi.ui.adapter.OrderAdapter;
+import com.bichi.ui.model.HorizontalItem;
+import com.bichi.ui.model.MainData;
 import com.bichi.ui.model.OrderItem;
 
 import java.util.ArrayList;
@@ -32,24 +35,22 @@ public class HomeFragment extends Fragment {
         context = getContext();
 
         RecyclerView statusRecyclerView = view.findViewById(R.id.recyclerview);
-        RecyclerView orderRecyclerView = view.findViewById(R.id.order_recyclerview);
 
-        ItemStatusAdapter adapter = new ItemStatusAdapter(getOrderStatus(),context);
-
-        ViewCompat.setNestedScrollingEnabled(statusRecyclerView,false);
-        statusRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+        MainAdapter adapter = new MainAdapter(context,getObject());
+        statusRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         statusRecyclerView.setAdapter(adapter);
-
-
-        OrderAdapter orderAdapter = new OrderAdapter(getOrderItem(),context);
-        ViewCompat.setNestedScrollingEnabled(orderRecyclerView,false);
-
-        orderRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        orderRecyclerView.setAdapter(orderAdapter);
         return view;
     }
 
-    private List<OrderItem> getOrderItem() {
+    private ArrayList<Object> getObject() {
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add(new MainData("hell"));
+        objects.add(getOrderStatus().get(0));
+        objects.add(getOrderItem().get(0));
+        return objects;
+    }
+
+    public static List<OrderItem> getOrderItem() {
         List<OrderItem> orderItems = new ArrayList<>();
         orderItems.add(new OrderItem("Order #1263",true,"Today, 11:11PM",R.drawable.ice,79,"COD"));
         orderItems.add(new OrderItem("Order #7263",true,"Yesterday, 12:10PM",R.drawable.sandwitch,100,"PAID"));
@@ -64,11 +65,11 @@ public class HomeFragment extends Fragment {
         return orderItems;
     }
 
-    private List<String> getOrderStatus() {
-        List<String> orderStatus = new ArrayList<>();
-        orderStatus.add("Pending(129)");
-        orderStatus.add("Accepted(13)");
-        orderStatus.add("Shipped(20)");
+    public static List<HorizontalItem> getOrderStatus() {
+        List<HorizontalItem> orderStatus = new ArrayList<>();
+        orderStatus.add(new HorizontalItem("Pending(129)"));
+        orderStatus.add(new HorizontalItem("Accepted(13)"));
+        orderStatus.add(new HorizontalItem("Shipped(20)"));
 
         return orderStatus;
     }
